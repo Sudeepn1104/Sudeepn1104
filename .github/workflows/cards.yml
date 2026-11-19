@@ -1,0 +1,100 @@
+name: cards
+
+on:
+  schedule:
+    - cron: "37 3 * * *"   # daily, off the hour
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "fonts/**"
+      - "assets/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cards
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install renderer dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch contribution calendar and repositories
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LOGIN: ${{ github.repository_owner }}
+        run: |
+          gh api graphql -F login="$LOGIN" -f query='
+            query($login: String!) {
+              user(login: $login) {
+                login
+                name
+                contributionsCollection {
+                  contributionCalendar {
+                    totalContributions
+                    weeks { contributionDays { date contributionCount } }
+                  }
+                }
+                repositories(first: 100, privacy: PUBLIC, ownerAffiliations: OWNER,
+                             orderBy: {field: PUSHED_AT, direction: DESC}) {
+                  nodes {
+                    name description url stargazerCount forkCount pushedAt isFork
+                    primaryLanguage { name }
+                  }
+                }
+              }
+            }' > /tmp/contributions.json
+
+      - name: Sanity-check the response
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          d = json.load(open("/tmp/contributions.json"))
+          try:
+              assert not d.get("errors"), d.get("errors")
+              u = d["data"]["user"]
+              weeks = u["contributionsCollection"]["contributionCalendar"]["weeks"]
+              assert 50 <= len(weeks) <= 54, f"{len(weeks)} weeks"
+              days = [x for w in weeks for x in w["contributionDays"]]
+              assert len(days) >= 350, f"{len(days)} days"
+              for x in days:
+                  assert isinstance(x["date"], str) and len(x["date"]) == 10
+                  assert isinstance(x["contributionCount"], int) and x["contributionCount"] >= 0
+              repos = u["repositories"]["nodes"]
+              assert isinstance(repos, list) and repos, "no repositories"
+              for r in repos:
+                  for k in ("name", "url", "stargazerCount", "pushedAt"):
+                      assert k in r, f"repo missing {k}"
+          except (AssertionError, KeyError, TypeError) as e:
+              print(f"Unexpected GraphQL response, keeping the old data: {e}", file=sys.stderr)
+              sys.exit(1)
+          PY
+          mkdir -p data
+          python3 -c "import json; json.dump(json.load(open('/tmp/contributions.json')), open('data/contributions.json','w'), indent=1)"
+
+      - name: Render cards
+        run: python3 scripts/render_cards.py
+
+      - name: Commit if anything changed
+        run: |
+          git add data cards
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh profile cards"
+          git push
