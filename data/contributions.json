@@ -5,7 +5,7 @@
    "name": "Sudeep Nayak",
    "contributionsCollection": {
     "contributionCalendar": {
-     "totalContributions": 185,
+     "totalContributions": 193,
      "weeks": [
       {
        "contributionDays": [
@@ -1692,6 +1692,10 @@
         {
          "date": "2026-11-19",
          "contributionCount": 2
+        },
+        {
+         "date": "2026-11-20",
+         "contributionCount": 8
         }
        ]
       }
@@ -1701,24 +1705,24 @@
    "repositories": {
     "nodes": [
      {
-      "name": "Sudeepn1104",
-      "description": "Profile ",
-      "url": "https://github.com/Sudeepn1104/Sudeepn1104",
+      "name": "MLOPs-Observatory",
+      "description": "Streamlit dashboard that detects data drift (PSI, KS) and triggers model retraining",
+      "url": "https://github.com/Sudeepn1104/MLOPs-Observatory",
       "stargazerCount": 0,
       "forkCount": 0,
-      "pushedAt": "2026-11-19T09:21:43Z",
+      "pushedAt": "2026-11-20T03:55:39Z",
       "isFork": false,
       "primaryLanguage": {
        "name": "Python"
       }
      },
      {
-      "name": "MLOPs-Observatory",
-      "description": "Streamlit dashboard that detects data drift (PSI, KS) and triggers model retraining",
-      "url": "https://github.com/Sudeepn1104/MLOPs-Observatory",
+      "name": "Sudeepn1104",
+      "description": "Profile ",
+      "url": "https://github.com/Sudeepn1104/Sudeepn1104",
       "stargazerCount": 0,
       "forkCount": 0,
-      "pushedAt": "2026-11-17T02:03:51Z",
+      "pushedAt": "2026-11-19T09:22:07Z",
       "isFork": false,
       "primaryLanguage": {
        "name": "Python"
