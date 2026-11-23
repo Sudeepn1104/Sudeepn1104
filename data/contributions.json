@@ -5,7 +5,7 @@
    "name": "Sudeep Nayak",
    "contributionsCollection": {
     "contributionCalendar": {
-     "totalContributions": 201,
+     "totalContributions": 205,
      "weeks": [
       {
        "contributionDays": [
@@ -1675,6 +1675,10 @@
        "contributionDays": [
         {
          "date": "2026-11-22",
+         "contributionCount": 4
+        },
+        {
+         "date": "2026-11-23",
          "contributionCount": 0
         }
        ]
@@ -1685,12 +1689,24 @@
    "repositories": {
     "nodes": [
      {
+      "name": "Sudeepn1104.github.io",
+      "description": null,
+      "url": "https://github.com/Sudeepn1104/Sudeepn1104.github.io",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "pushedAt": "2026-11-22T13:53:01Z",
+      "isFork": false,
+      "primaryLanguage": {
+       "name": "HTML"
+      }
+     },
+     {
       "name": "Sudeepn1104",
       "description": "Profile ",
       "url": "https://github.com/Sudeepn1104/Sudeepn1104",
       "stargazerCount": 0,
       "forkCount": 0,
-      "pushedAt": "2026-11-21T11:39:29Z",
+      "pushedAt": "2026-11-22T11:52:59Z",
       "isFork": false,
       "primaryLanguage": {
        "name": "Python"
@@ -1706,18 +1722,6 @@
       "isFork": false,
       "primaryLanguage": {
        "name": "Python"
-      }
-     },
-     {
-      "name": "Sudeepn1104.github.io",
-      "description": null,
-      "url": "https://github.com/Sudeepn1104/Sudeepn1104.github.io",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "pushedAt": "2026-11-21T04:39:33Z",
-      "isFork": false,
-      "primaryLanguage": {
-       "name": "HTML"
       }
      },
      {
