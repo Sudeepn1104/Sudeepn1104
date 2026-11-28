@@ -5,7 +5,7 @@
    "name": "Sudeep Nayak",
    "contributionsCollection": {
     "contributionCalendar": {
-     "totalContributions": 214,
+     "totalContributions": 217,
      "weeks": [
       {
        "contributionDays": [
@@ -1696,6 +1696,10 @@
         {
          "date": "2026-11-27",
          "contributionCount": 0
+        },
+        {
+         "date": "2026-11-28",
+         "contributionCount": 3
         }
        ]
       }
@@ -1704,6 +1708,42 @@
    },
    "repositories": {
     "nodes": [
+     {
+      "name": "MLOPs-Observatory",
+      "description": "Streamlit dashboard that detects data drift (PSI, KS) and triggers model retraining",
+      "url": "https://github.com/Sudeepn1104/MLOPs-Observatory",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "pushedAt": "2026-11-28T10:07:18Z",
+      "isFork": false,
+      "primaryLanguage": {
+       "name": "Python"
+      }
+     },
+     {
+      "name": "MLOPS-Lab",
+      "description": null,
+      "url": "https://github.com/Sudeepn1104/MLOPS-Lab",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "pushedAt": "2026-11-28T04:38:08Z",
+      "isFork": false,
+      "primaryLanguage": {
+       "name": "Python"
+      }
+     },
+     {
+      "name": "Sudeepn1104",
+      "description": "Profile ",
+      "url": "https://github.com/Sudeepn1104/Sudeepn1104",
+      "stargazerCount": 0,
+      "forkCount": 0,
+      "pushedAt": "2026-11-27T13:00:42Z",
+      "isFork": false,
+      "primaryLanguage": {
+       "name": "Python"
+      }
+     },
      {
       "name": "Sudeepn1104.github.io",
       "description": null,
@@ -1717,18 +1757,6 @@
       }
      },
      {
-      "name": "Sudeepn1104",
-      "description": "Profile ",
-      "url": "https://github.com/Sudeepn1104/Sudeepn1104",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "pushedAt": "2026-11-26T13:03:26Z",
-      "isFork": false,
-      "primaryLanguage": {
-       "name": "Python"
-      }
-     },
-     {
       "name": "mood-player",
       "description": "Plays my saved Instagram reels by mood, best ones first",
       "url": "https://github.com/Sudeepn1104/mood-player",
@@ -1738,18 +1766,6 @@
       "isFork": false,
       "primaryLanguage": {
        "name": "JavaScript"
-      }
-     },
-     {
-      "name": "MLOPs-Observatory",
-      "description": "Streamlit dashboard that detects data drift (PSI, KS) and triggers model retraining",
-      "url": "https://github.com/Sudeepn1104/MLOPs-Observatory",
-      "stargazerCount": 0,
-      "forkCount": 0,
-      "pushedAt": "2026-11-21T10:06:01Z",
-      "isFork": false,
-      "primaryLanguage": {
-       "name": "Python"
       }
      },
      {
